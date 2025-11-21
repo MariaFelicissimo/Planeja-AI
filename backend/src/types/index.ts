@@ -6,6 +6,19 @@ export interface User {
   name: string;
 }
 
+// Estender Request do Express com user
+declare global {
+  namespace Express {
+    interface Request {
+      user?: {
+        id: string;
+        email: string;
+        name: string;
+      };
+    }
+  }
+}
+
 export interface LoginRequest {
   email: string;
   password: string;
@@ -20,7 +33,7 @@ export interface RegisterRequest {
 export interface AuthResponse {
   success: boolean;
   message: string;
-  user?: Omit<User, 'password'>;
+  user?: Omit<User, "password">;
   token?: string;
 }
 
@@ -80,17 +93,25 @@ export interface TodoItem {
   name: string;
   description?: string;
   done: boolean;
+  priority?: string | null;
+  due_date?: string | null;
+  created_at?: string;
+  updated_at?: string;
 }
 
 export interface CreateItemRequest {
   name: string;
   description?: string;
+  priority?: string;
+  due_date?: string;
 }
 
 export interface UpdateItemRequest {
   name?: string;
   description?: string;
   done?: boolean;
+  priority?: string;
+  due_date?: string;
 }
 
 export interface ItemResponse {
@@ -104,6 +125,10 @@ export interface ItemsResponse {
   message: string;
   items: TodoItem[];
   total: number;
+  summary?: {
+    pending: number;
+    completed: number;
+  };
 }
 
 // Tipos para steps (relação plano-lista)
@@ -150,9 +175,9 @@ export interface ListWithItems extends TodoList {
 }
 
 export interface PlanDetails extends Plan {
-  steps: (Step & { 
-    list: TodoList & { 
-      items: TodoItem[] 
-    } 
+  steps: (Step & {
+    list: TodoList & {
+      items: TodoItem[];
+    };
   })[];
 }
