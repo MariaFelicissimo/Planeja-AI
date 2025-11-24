@@ -25,6 +25,13 @@ Fui responsável por toda a parte de **UX (Experiência do Usuário)** e **UI (I
 
 ---
 
+## 🚀 Aplicação em Produção
+
+Quando o site voltar, seguem as URLs de Frontend e Backend do projeto:
+
+- *Frontend (Vercel):* https://marcio-todolist.vercel.app  
+- *Backend (Azure Container App):* https://capp-marcio-todolist.agreeabledune-669790b3.brazilsouth.azurecontainerapps.io
+
 ## 📌 Entregas realizadas
 
 - Protótipo completo das telas principais do sistema.  
@@ -33,3 +40,4 @@ Fui responsável por toda a parte de **UX (Experiência do Usuário)** e **UI (I
 - Garantia de consistência visual em todas as telas.  
 
 ---
+
